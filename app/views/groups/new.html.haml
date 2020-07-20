@@ -1,0 +1,13 @@
+.new-chat-group-title
+  新規議事録の作成
+
+= form_for @group do |f|
+  = f.text_field :name, class: "chat-group-form__input", placeholder: "議事録名を入力してください"
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+      %label.chat-group-form__label{:for => "chat_group_参加者を選択してください"} 参加者を選択してください
+  = f.collection_check_boxes :user_ids, User.all, :id, :name
+  = f.submit "作成", class: "chat-group-form__action-btn"
+
+= link_to root_path, class: "chat-group-form__return-btn" do
+  戻る

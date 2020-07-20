@@ -1,0 +1,11 @@
+.message
+  %ul.message__box
+    %li.message__box__name
+      = message.user.name
+    %li.message__box__message
+      = message.text
+    = image_tag message.image.url, class: 'message__image' if message.image.present?
+    .message__box__date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+    .message__box__delete
+      = link_to '削除', "/groups/#{@group.id}/messages/#{message.id}", method: :delete

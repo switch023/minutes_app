@@ -1,0 +1,17 @@
+.signup__title ログイン
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .name__box
+    = f.label :ユーザ名
+    %br/
+    = f.text_field :name, autofocus: true, autocomplete: "name"
+  .password__box
+    = f.label :パスワード
+    %br/
+    = f.password_field :password, autocomplete: "current-password"
+  - if devise_mapping.rememberable?
+    .remember
+      = f.check_box :remember_me
+      = f.label :ログインしたままの状態にする
+  .actions
+    = f.submit "ログイン"
+= render "devise/shared/links"

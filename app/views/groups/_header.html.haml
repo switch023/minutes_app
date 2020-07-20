@@ -1,0 +1,16 @@
+.header
+  .header__box
+    .header__box__title
+      minute App
+    %ul.header__box__config
+      %li.header__box__config__user
+        Name:
+        =current_user.name
+      %li.header__box__config__icon--cog
+        =link_to "#" do
+          =icon("fas","user-cog")
+      %li.header__box__config__icon--edit
+        =link_to new_group_path do
+          =icon("fas","edit")
+      = link_to destroy_user_session_path, class: "header__box__config__btn" do
+        Edit
