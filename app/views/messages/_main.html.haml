@@ -1,0 +1,11 @@
+.messages
+  = render @messages
+
+.form
+  = form_for [@group, @message] do |f|
+    .form__box
+      = f.text_field :text, class: 'form__box__text', placeholder: 'type a message'
+      = f.label :image, class: 'form__box__image' do
+        = icon("fas", "image")
+        = f.file_field :image, class: 'form__box__hidden'
+    = f.submit 'Send', class: 'form__submit'

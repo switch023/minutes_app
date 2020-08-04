@@ -1,0 +1,18 @@
+.message-header
+  .message-header__box
+    .message-header__box__title
+      = @group.name
+    .message-header__box__user
+      Member:
+      - @group.group_users.each do |group_user|
+        = group_user.user.name
+    %ul.message-header__box__config
+      %li.message-header__box__config__icon--cog
+        =link_to "#" do
+          =icon("fas","user-cog")
+      %li.message-header__box__config__icon--edit
+        =link_to new_group_path do
+          =icon("fas","edit")
+      = link_to root_path, class: "message-header__box__config__btn" do
+        一覧に戻る
+

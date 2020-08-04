@@ -1,0 +1,9 @@
+.main
+  - current_user.groups.each do |group|
+    .main__groups
+      .main__groups__name
+        = link_to group_messages_path(group) do
+          = group.name
+      .main__groups__date
+        作成日:
+        = group.created_at.strftime("%Y年%m月%d日 %H時%M分")
