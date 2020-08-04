@@ -8,8 +8,4 @@
       = f.label :image, class: 'form__box__image' do
         = icon("fas", "image")
         = f.file_field :image, class: 'form__box__hidden'
-
-      -# = f.label :image, class: 'text__python' do
-      -#   = icon("fas", "envelope-open-text")
-      -#   = *Open3.popen3('text.py')
     = f.submit 'Send', class: 'form__submit'
